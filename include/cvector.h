@@ -29,5 +29,15 @@ Vector2 SubVector2(Vector2 v1, Vector2 v2);
 Vector3 SubVector3(Vector3 v1, Vector3 v2);
 Vector4 SubVector4(Vector4 v1, Vector4 v2);
 
+/* Scalar Multiplcation */
+Vector2 MulVector2D(Vector2 v, double x);
+Vector3 MulVector3D(Vector3 v, double x);
+Vector4 MulVector4D(Vector4 v, double x);
+
+/* Dot Product */
+double DotVector2(Vector2 v1, Vector2 v2);
+double DotVector3(Vector3 v1, Vector3 v2);
+double DotVector4(Vector4 v1, Vector4 v2);
+
 #define CVECTOR_H
 #endif
