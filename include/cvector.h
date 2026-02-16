@@ -1,10 +1,33 @@
 #ifndef CVECTOR_H
 
-typedef struct Vector {
-  float x, y, z;
-} Vector;
+/* Vector struct definitions */
+typedef struct Vector2 {
+  long double x;
+  long double y;
+} Vector2;
 
-Vector add(Vector v1, Vector v2);
+typedef struct Vector3 {
+  long double x;
+  long double y;
+  long double z;
+} Vector3;
+
+typedef struct Vector4 {
+  long double x;
+  long double y;
+  long double z;
+  long double w;
+} Vector4;
+
+/* Addition */
+Vector2 AddVector2(Vector2 v1, Vector2 v2);
+Vector3 AddVector3(Vector3 v1, Vector3 v2);
+Vector4 AddVector4(Vector4 v1, Vector4 v2)
+
+/* Subtraction */
+Vector2 SubVector2(Vector2 v1, Vector2 v2);
+Vector3 SubVector3(Vector3 v1, Vector3 v2);
+Vector4 SubVector4(Vector4 v1, Vector4 v2);
 
 #define CVECTOR_H
 #endif
