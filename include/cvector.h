@@ -22,7 +22,7 @@ typedef struct Vector4 {
 /* Addition */
 Vector2 AddVector2(Vector2 v1, Vector2 v2);
 Vector3 AddVector3(Vector3 v1, Vector3 v2);
-Vector4 AddVector4(Vector4 v1, Vector4 v2)
+Vector4 AddVector4(Vector4 v1, Vector4 v2);
 
 /* Subtraction */
 Vector2 SubVector2(Vector2 v1, Vector2 v2);
@@ -42,6 +42,11 @@ double DotVector4(Vector4 v1, Vector4 v2);
 /* Cross Product */
 double CrossVector2(Vector2 v1, Vector2 v2);
 Vector3 CrossVector3(Vector3 v1, Vector3 v2);
+
+/* magnitude */
+double MagVector2(Vector2 v);
+double MagVector3(Vector3 v);
+double MagVector4(Vector4 v);
 
 #define CVECTOR_H
 #endif
