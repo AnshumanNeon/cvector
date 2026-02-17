@@ -63,3 +63,17 @@ double DotVector4(Vector4 v1, Vector4 v2) {
   double dot = v1.x * v2.x + v1.y * v2.y + v1.z * v2.z + v1.w * v2.w;
   return dot;
 }
+
+/* Cross Multiplication */
+double CrossVector2(Vector2 v1, Vector2 v2) {
+  return v1.x * v2.y - v2.x * v1.y;
+}
+
+Vector3 CrossVector3(Vector3 v1, Vector3 v2) {
+  Vector3 cross;
+  cross.x = v1.y * v2.z - v2.y * v1.z;
+  cross.y = v1.x * v2.z - v2.x * v1.z;
+  cross.z = v1.x * v2.y - v2.x * v1.z;
+
+  return cross;
+}
