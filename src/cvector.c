@@ -91,3 +91,31 @@ double MagVector3(Vector3 v) {
 double MagVector4(Vector4 v) {
   return sqrt(v.x * v.x + v.y * v.y + v.z * v.z + v.w * v.w);
 }
+
+/* unit vector */
+Vector2 UnitVector2(Vector2 v) {
+  Vector2 result;
+  double mag = MagVector2(v);
+  result.x = v.x / mag;
+  result.y = v.y / mag;
+  return result;
+}
+
+Vector3 UnitVector3(Vector3 v) {
+  Vector3 result;
+  double mag = MagVector3(v);
+  result.x = v.x / mag;
+  result.y = v.y / mag;
+  result.z = v.z / mag;
+  return result;
+}
+
+Vector4 UnitVector4(Vector4 v) {
+  Vector4 result;
+  double mag = MagVector4(v);
+  result.x = v.x / mag;
+  result.y = v.y / mag;
+  result.z = v.z / mag;
+  result.w = v.w / mag;
+  return result;
+}

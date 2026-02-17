@@ -48,5 +48,10 @@ double MagVector2(Vector2 v);
 double MagVector3(Vector3 v);
 double MagVector4(Vector4 v);
 
+/* unit vector */
+Vector2 UnitVector2(Vector2 v);
+Vector3 UnitVector3(Vector3 v);
+Vector4 UnitVector4(Vector4 v);
+
 #define CVECTOR_H
 #endif
