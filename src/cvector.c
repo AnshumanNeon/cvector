@@ -1,6 +1,22 @@
 #include "cvector.h"
 #include <math.h>
 
+/* vector initialization */
+Vector2 GetVector2(double x, double y) {
+  Vector2 result = ( .x = x, .y = y );
+  return result;
+}
+
+Vector3 GetVector3(dobule x, double y, double z) {
+  Vector3 result = ( .x = x, .y = y, .z = z );
+  return result;
+}
+
+Vector4 GetVector4(double x, double y, double z, double w) {
+  Vector4 result = ( .x = x, .y = y, .z = z, .w = w );
+  return result;
+}
+
 /* Addition */
 Vector2 AddVector2(Vector2 v1, Vector2 v2) {
   Vector2 new = { .x = v1.x + v2.x, .y = v1.y + v2.y };

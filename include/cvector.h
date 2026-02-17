@@ -19,6 +19,11 @@ typedef struct Vector4 {
   long double w;
 } Vector4;
 
+/* vector initiliasation */
+Vector2 GetVector2(double x, double y);
+Vector3 GetVector3(dobule x, double y, double z);
+Vector4 GetVector4(double x, double y, double z, double w);
+
 /* Addition */
 Vector2 AddVector2(Vector2 v1, Vector2 v2);
 Vector3 AddVector3(Vector3 v1, Vector3 v2);
