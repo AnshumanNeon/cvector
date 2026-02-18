@@ -39,6 +39,11 @@ Vector2 MulVector2D(Vector2 v, double x);
 Vector3 MulVector3D(Vector3 v, double x);
 Vector4 MulVector4D(Vector4 v, double x);
 
+/* Scalar Division */
+Vector2 DivVector2D(Vector2 v, double x);
+Vector3 DivVector3D(Vector3 v, double x);
+Vector4 DivVector4D(Vector4 v, double x);
+
 /* Dot Product */
 double DotVector2(Vector2 v1, Vector2 v2);
 double DotVector3(Vector3 v1, Vector3 v2);
@@ -48,15 +53,25 @@ double DotVector4(Vector4 v1, Vector4 v2);
 double CrossVector2(Vector2 v1, Vector2 v2);
 Vector3 CrossVector3(Vector3 v1, Vector3 v2);
 
+/* Squared magnitude */
+double SqrMagVector2(Vector2 v);
+double SqrMagVector3(Vector3 v);
+double SqrMagVector4(Vector4 v);
+
 /* magnitude */
 double MagVector2(Vector2 v);
 double MagVector3(Vector3 v);
 double MagVector4(Vector4 v);
 
-/* unit vector */
-Vector2 UnitVector2(Vector2 v);
-Vector3 UnitVector3(Vector3 v);
-Vector4 UnitVector4(Vector4 v);
+/* normalize vector */
+Vector2 NormVector2(Vector2 v);
+Vector3 NormVector3(Vector3 v);
+Vector4 NormVector4(Vector4 v);
+
+/* hadamard product */
+Vector2 HadamardVector2(Vector2 v1, Vector2 v2);
+Vector3 HadamardVector3(Vector3 v1, Vector3 v2);
+Vector4 HadamardVector4(Vector4 v1, Vector4 v2);
 
 #define CVECTOR_H
 #endif

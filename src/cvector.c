@@ -65,6 +65,23 @@ Vector4 MulVector4D(Vector4 v, double x) {
   return new;
 }
 
+/* Scalar Divison */
+Vector2 DivVector2D(Vector2 v, double x) {
+  double inv_x = 1/x;
+  return MulVector2D(v, inv_x);
+}
+
+Vector3 DivVector3D(Vector3 v, double x) {
+  double inv_x = 1/x;
+  return MulVector3D(v, inv_x);
+}
+
+Vector4 DivVector4D(Vector4 v, double x) {
+  double inv_x = 1/x;
+  return MulVector3
+    D(v, inv_x);
+}
+
 /* Dot Product */
 double DotVector2(Vector2 v1, Vector2 v2) {
   double dot = v1.x * v2.x + v1.y * v2.y;
@@ -96,20 +113,33 @@ Vector3 CrossVector3(Vector3 v1, Vector3 v2) {
 }
 
 /* magnitude */
+double SqrMagVector2(Vector2 v) {
+  return (v.x * v.x + v.y * v.y);
+}
+
+double SqrMagVector3(Vector3 v) {
+  return (v.x * v.x + v.y * v.y + v.z * v.z);
+}
+
+double SqrMagVector4(Vector4 v) {
+  return (v.x * v.x + v.y * v.y + v.z * v.z + v.w * v.w);
+}
+
+/* magnitude */
 double MagVector2(Vector2 v) {
-  return sqrt(v.x * v.x + v.y * v.y);
+  return sqrt(SqrMagVector2(v));
 }
 
 double MagVector3(Vector3 v) {
-  return sqrt(v.x * v.x + v.y * v.y + v.z * v.z);
+  return sqrt(SqrMagVector3(v));
 }
 
 double MagVector4(Vector4 v) {
-  return sqrt(v.x * v.x + v.y * v.y + v.z * v.z + v.w * v.w);
+  return sqrt(SqrMagVector4(v));
 }
 
-/* unit vector */
-Vector2 UnitVector2(Vector2 v) {
+/* normalize vector */
+Vector2 NormVector2(Vector2 v) {
   Vector2 result;
   double mag = MagVector2(v);
   result.x = v.x / mag;
@@ -117,7 +147,7 @@ Vector2 UnitVector2(Vector2 v) {
   return result;
 }
 
-Vector3 UnitVector3(Vector3 v) {
+Vector3 NormVector3(Vector3 v) {
   Vector3 result;
   double mag = MagVector3(v);
   result.x = v.x / mag;
@@ -126,12 +156,28 @@ Vector3 UnitVector3(Vector3 v) {
   return result;
 }
 
-Vector4 UnitVector4(Vector4 v) {
+Vector4 NormVector4(Vector4 v) {
   Vector4 result;
   double mag = MagVector4(v);
   result.x = v.x / mag;
   result.y = v.y / mag;
   result.z = v.z / mag;
   result.w = v.w / mag;
+  return result;
+}
+
+/* Hadamard product */
+Vector2 HadamardVector2(Vector2 v1, Vector2 v2) {
+  Vector2 result = { .x = v1.x * v2.x, .y = v1.y * v2.y };
+  return result;
+}
+
+Vector3 HadamardVector3(Vector3 v1, Vector3 v2) {
+  Vector3 result = { .x = v1.x * v2.x, .y = v1.y * v2.y, .z = v1.z * v2.z };
+  return result;
+}
+
+Vector4 HadamardVector4(Vector4 v1, Vector4 v2) {
+  Vector4 result = { .x = v1.x * v2.x, .y = v1.y * v2.y, .z = v1.z * v2.z, .w = v1.w * v2.w };
   return result;
 }
