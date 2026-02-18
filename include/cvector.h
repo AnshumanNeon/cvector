@@ -73,5 +73,10 @@ Vector2 HadamardVector2(Vector2 v1, Vector2 v2);
 Vector3 HadamardVector3(Vector3 v1, Vector3 v2);
 Vector4 HadamardVector4(Vector4 v1, Vector4 v2);
 
+/* distance */
+double DistanceVector2(Vector2 v1, Vector2 v2);
+double DistanceVector3(Vector3 v1, Vector3 v2);
+double DistanceVector4(Vector4 v1, Vector4 v2);
+
 #define CVECTOR_H
 #endif

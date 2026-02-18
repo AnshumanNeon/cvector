@@ -138,7 +138,8 @@ double MagVector4(Vector4 v) {
   return sqrt(SqrMagVector4(v));
 }
 
-/* normalize vector */
+/* normalize
+   vector */
 Vector2 NormVector2(Vector2 v) {
   Vector2 result;
   double mag = MagVector2(v);
@@ -180,4 +181,17 @@ Vector3 HadamardVector3(Vector3 v1, Vector3 v2) {
 Vector4 HadamardVector4(Vector4 v1, Vector4 v2) {
   Vector4 result = { .x = v1.x * v2.x, .y = v1.y * v2.y, .z = v1.z * v2.z, .w = v1.w * v2.w };
   return result;
+}
+
+/* distance */
+Vector2 DistanceVector2(Vector2 v1, Vector2 v2) {
+  return MagVector2(SubVector2(v1, v2));
+}
+
+Vector3 DistanceVector3(Vector3 v1, Vector3 v2) {
+  return MagVector3(SubVector3(v1, v2));
+}
+
+Vector4 DistanceVector4(Vector4 v1, Vector4 v2) {
+  return MagVector4(SubVector4(v1, v2));
 }
