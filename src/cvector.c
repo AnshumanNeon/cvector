@@ -183,6 +183,19 @@ Vector4 HadamardVector4(Vector4 v1, Vector4 v2) {
   return result;
 }
 
+/* squared distance */
+double SqrDistanceVector2(Vector2 v1, Vector2 v2) {
+  return SqrMagVector2(SubVector2(v1, v2));
+}
+
+double SqrDistanceVector3(Vector3 v1, Vector3 v2) {
+  return SqrMagVector3(SubVector3(v1, v2));
+}
+
+double SqrDistanceVector4(Vector4 v1, Vector4 v2) {
+  return SqrMagVector4(SubVector4(v1, v2));
+}
+
 /* distance */
 Vector2 DistanceVector2(Vector2 v1, Vector2 v2) {
   return MagVector2(SubVector2(v1, v2));
@@ -194,4 +207,17 @@ Vector3 DistanceVector3(Vector3 v1, Vector3 v2) {
 
 Vector4 DistanceVector4(Vector4 v1, Vector4 v2) {
   return MagVector4(SubVector4(v1, v2));
+}
+
+/* angle between vectors */
+double AngleVector2(Vector2 v1, Vector2 v2) {
+  return acos(DotVector2(v1, v2) / (MagVector2(v1) * MagVector2(v2)));
+}
+
+double AngleVector3(Vector3 v1, Vector3 v2) {
+  return acos(DotVector3(v1, v2) / (MagVector3(v1) * MagVector3(v2)));
+}
+
+double AngleVector4(Vector4 v1, Vector4 v2) {
+  return acos(DotVector4(v1, v2) / (MagVector4(v1) * MagVector4(v2)));
 }
