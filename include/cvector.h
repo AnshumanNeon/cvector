@@ -89,9 +89,9 @@ double AngleVector3(Vector3 v1, Vector3 v2);
 double AngleVector4(Vector4 v1, Vector4 v2);
 
 /* projection of v1 on v2 */
-double ProjectionVector2(Vector2 v1, Vector2 v2);
-double ProjectionVector3(Vector3 v1, Vector3 v2);
-double ProjectionVector4(Vector4 v1, Vector4 v2);
+Vector2 ProjectionVector2(Vector2 v1, Vector2 v2);
+Vector3 ProjectionVector3(Vector3 v1, Vector3 v2);
+Vector4 ProjectionVector4(Vector4 v1, Vector4 v2);
 
 #define CVECTOR_H
 #endif
