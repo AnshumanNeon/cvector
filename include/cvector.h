@@ -21,7 +21,7 @@ typedef struct Vector4 {
 
 /* vector initiliasation */
 Vector2 GetVector2(double x, double y);
-Vector3 GetVector3(dobule x, double y, double z);
+Vector3 GetVector3(double x, double y, double z);
 Vector4 GetVector4(double x, double y, double z, double w);
 
 /* Addition */

@@ -3,17 +3,17 @@
 
 /* vector initialization */
 Vector2 GetVector2(double x, double y) {
-  Vector2 result = ( .x = x, .y = y );
+  Vector2 result = { .x = x, .y = y };
   return result;
 }
 
-Vector3 GetVector3(dobule x, double y, double z) {
-  Vector3 result = ( .x = x, .y = y, .z = z );
+Vector3 GetVector3(double x, double y, double z) {
+  Vector3 result = { .x = x, .y = y, .z = z };
   return result;
 }
 
 Vector4 GetVector4(double x, double y, double z, double w) {
-  Vector4 result = ( .x = x, .y = y, .z = z, .w = w );
+  Vector4 result = { .x = x, .y = y, .z = z, .w = w };
   return result;
 }
 
@@ -78,8 +78,7 @@ Vector3 DivVector3D(Vector3 v, double x) {
 
 Vector4 DivVector4D(Vector4 v, double x) {
   double inv_x = 1/x;
-  return MulVector3
-    D(v, inv_x);
+  return MulVector4D(v, inv_x);
 }
 
 /* Dot Product */
@@ -197,15 +196,15 @@ double SqrDistanceVector4(Vector4 v1, Vector4 v2) {
 }
 
 /* distance */
-Vector2 DistanceVector2(Vector2 v1, Vector2 v2) {
+double DistanceVector2(Vector2 v1, Vector2 v2) {
   return MagVector2(SubVector2(v1, v2));
 }
 
-Vector3 DistanceVector3(Vector3 v1, Vector3 v2) {
+double DistanceVector3(Vector3 v1, Vector3 v2) {
   return MagVector3(SubVector3(v1, v2));
 }
 
-Vector4 DistanceVector4(Vector4 v1, Vector4 v2) {
+double DistanceVector4(Vector4 v1, Vector4 v2) {
   return MagVector4(SubVector4(v1, v2));
 }
 
