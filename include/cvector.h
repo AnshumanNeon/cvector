@@ -114,7 +114,7 @@ Vector4 ProjectionVector4(Vector4 v1, Vector4 v2);
 #define UnitZVector4 GetVector4(0, 0, 1, 0)
 
 /* unit w vector */
-#define UnitZVector4 GetVector4(0, 0, 0, 1)
+#define UnitWVector4 GetVector4(0, 0, 0, 1)
 
 #define CVECTOR_H
 #endif
