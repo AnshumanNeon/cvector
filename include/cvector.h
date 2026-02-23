@@ -100,10 +100,21 @@ Vector4 ProjectionVector4(Vector4 v1, Vector4 v2);
 #define ZeroVector4 GetVector4(0, 0, 0, 0)
 
 /* unit x vector */
-/* unit y vector */
-/* unit z vector */
-/* unit w vector */
+#define UnitXVector2 GetVector2(1, 0)
+#define UnitXVector3 GetVector3(1, 0, 0)
+#define UnitXVector4 GetVector4(1, 0, 0, 0)
 
+/* unit y vector */
+#define UnitYVector2 GetVector2(0, 1)
+#define UnitYVector3 GetVector3(0, 1, 0)
+#define UnitYVector4 GetVector4(0, 1, 0, 0)
+
+/* unit z vector */
+#define UnitZVector3 GetVector3(0, 0, 1)
+#define UnitZVector4 GetVector4(0, 0, 1, 0)
+
+/* unit w vector */
+#define UnitZVector4 GetVector4(0, 0, 0, 1)
 
 #define CVECTOR_H
 #endif
