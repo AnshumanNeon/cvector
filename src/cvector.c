@@ -233,3 +233,16 @@ Vector3 ProjectionVector3(Vector3 v1, Vector3 v2) {
 Vector4 ProjectionVector4(Vector4 v1, Vector4 v2) {
   return MulVector4D(v2, (DotVector4(v1, v2) / MagVector4(v2)));
 }
+
+/* lerp */
+Vector2 LerpVector2(Vector2 v1, Vector2 v2, double x) {
+  return GetVector2(Lerp(v1.x, v2.x, x), Lerp(v1.y, v2.y, x));
+}
+
+Vector3 LerpVector3(Vector3 v1, Vector3 v2, double x) {
+  return GetVector3(Lerp(v1.x, v2.x, x), Lerp(v1.y, v2.y, x), Lerp(v1.z, v2.z, x));
+}
+
+Vector4 LerpVector4(Vector4 v1, Vector4 v2, double x) {
+  return GetVector4(Lerp(v1.x, v2.x, x), Lerp(v1.y, v2.y, x), Lerp(v1.z, v2.z, x), Lerp(v1.w, v2.w, x));
+}

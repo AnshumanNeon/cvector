@@ -93,6 +93,12 @@ Vector2 ProjectionVector2(Vector2 v1, Vector2 v2);
 Vector3 ProjectionVector3(Vector3 v1, Vector3 v2);
 Vector4 ProjectionVector4(Vector4 v1, Vector4 v2);
 
+/* lerp */
+#define Lerp(a, b, t) (a*(1-t) + t*b)
+Vector2 LerpVector2(Vector2 v1, Vector2 v2, double x);
+Vector3 LerpVector3(Vector3 v1, Vector3 v2, double x);
+Vector4 LerpVector4(Vector4 v1, Vector4 v2, double x);
+
 /* some common and useful vectors */
 /* zero vector */
 #define ZeroVector2 GetVector2(0, 0)
