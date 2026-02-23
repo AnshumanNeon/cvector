@@ -2,81 +2,81 @@
 #include <math.h>
 
 /* vector initialization */
-inline Vector2 GetVector2(double x, double y) {
+Vector2 GetVector2(double x, double y) {
   Vector2 result = { .x = x, .y = y };
   return result;
 }
 
-inline Vector3 GetVector3(double x, double y, double z) {
+Vector3 GetVector3(double x, double y, double z) {
   Vector3 result = { .x = x, .y = y, .z = z };
   return result;
 }
 
-inline Vector4 GetVector4(double x, double y, double z, double w) {
+Vector4 GetVector4(double x, double y, double z, double w) {
   Vector4 result = { .x = x, .y = y, .z = z, .w = w };
   return result;
 }
 
 /* Addition */
-inline Vector2 AddVector2(Vector2 v1, Vector2 v2) {
+Vector2 AddVector2(Vector2 v1, Vector2 v2) {
   Vector2 new = { .x = v1.x + v2.x, .y = v1.y + v2.y };
   return new;
 }
 
-inline Vector3 AddVector3(Vector3 v1, Vector3 v2) {
+Vector3 AddVector3(Vector3 v1, Vector3 v2) {
   Vector3 new = { .x = v1.x + v2.x, .y = v1.y + v2.y, .z = v1.z + v2.z };
   return new;
 }
 
-inline Vector4 AddVector4(Vector4 v1, Vector4 v2) {
+Vector4 AddVector4(Vector4 v1, Vector4 v2) {
   Vector4 new = { .x = v1.x + v2.x, .y = v1.y + v2.y, .z = v1.z + v2.z, .w = v1.w + v2.w };
   return new;
 }
 
 /* Subtraction */
-inline Vector2 SubVector2(Vector2 v1, Vector2 v2) {
+Vector2 SubVector2(Vector2 v1, Vector2 v2) {
   Vector2 new = { .x = v1.x - v2.x, .y = v1.y - v2.y };
   return new;
 }
 
-inline Vector3 SubVector3(Vector3 v1, Vector3 v2) {
+Vector3 SubVector3(Vector3 v1, Vector3 v2) {
   Vector3 new = { .x = v1.x - v2.x, .y = v1.y - v2.y, .z = v1.z - v2.z };
   return new;
 }
 
-inline Vector4 SubVector4(Vector4 v1, Vector4 v2) {
+Vector4 SubVector4(Vector4 v1, Vector4 v2) {
   Vector4 new = { .x = v1.x - v2.x, .y = v1.y - v2.y, .z = v1.z - v2.z, .w = v1.w - v2.w };
   return new;
 }
 
 /* Scalar Multiplication */
-inline Vector2 MulVector2D(Vector2 v, double x) {
+Vector2 MulVector2D(Vector2 v, double x) {
   Vector2 new = { .x = v.x * x, .y = v.y * x };
   return new;
 }
 
-inline Vector3 MulVector3D(Vector3 v, double x) {
+Vector3 MulVector3D(Vector3 v, double x) {
   Vector3 new = { .x = v.x * x, .y = v.y * x, .z = v.z * x };
   return new;
 }
 
-inline Vector4 MulVector4D(Vector4 v, double x) {
+Vector4 MulVector4D(Vector4 v, double x) {
   Vector4 new = { .x = v.x * x, .y = v.y * x, .z = v.z * x, .w = v.w * x };
   return new;
 }
 
 /* Scalar Divison */
-inline Vector2 DivVector2D(Vector2 v, double x) {
+Vector2 DivVector2D(Vector2 v, double x) {
   double inv_x = 1/x;
   return MulVector2D(v, inv_x);
 }
 
-inline Vector3 DivVector3D(Vector3 v, double x) {
+Vector3 DivVector3D(Vector3 v, double x) {
   double inv_x = 1/x;
   return MulVector3D(v, inv_x);
 }
 
-inline Vector4 DivVector4D(Vector4 v, double x) {
+Vector4 DivVector4D(Vector4 v, double x) {
   double inv_x = 1/x;
   return MulVector4D(v, inv_x);
 }

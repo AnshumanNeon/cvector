@@ -20,29 +20,29 @@ typedef struct Vector4 {
 } Vector4;
 
 /* vector initiliasation */
-inline Vector2 GetVector2(double x, double y);
-inline Vector3 GetVector3(double x, double y, double z);
-inline Vector4 GetVector4(double x, double y, double z, double w);
+Vector2 GetVector2(double x, double y);
+Vector3 GetVector3(double x, double y, double z);
+Vector4 GetVector4(double x, double y, double z, double w);
 
 /* Addition */
-inline Vector2 AddVector2(Vector2 v1, Vector2 v2);
-inline Vector3 AddVector3(Vector3 v1, Vector3 v2);
-inline Vector4 AddVector4(Vector4 v1, Vector4 v2);
+Vector2 AddVector2(Vector2 v1, Vector2 v2);
+Vector3 AddVector3(Vector3 v1, Vector3 v2);
+Vector4 AddVector4(Vector4 v1, Vector4 v2);
 
 /* Subtraction */
-inline Vector2 SubVector2(Vector2 v1, Vector2 v2);
-inline Vector3 SubVector3(Vector3 v1, Vector3 v2);
-inline Vector4 SubVector4(Vector4 v1, Vector4 v2);
+Vector2 SubVector2(Vector2 v1, Vector2 v2);
+Vector3 SubVector3(Vector3 v1, Vector3 v2);
+Vector4 SubVector4(Vector4 v1, Vector4 v2);
 
 /* Scalar Multiplcation */
-inline Vector2 MulVector2D(Vector2 v, double x);
-inline Vector3 MulVector3D(Vector3 v, double x);
-inline Vector4 MulVector4D(Vector4 v, double x);
+Vector2 MulVector2D(Vector2 v, double x);
+Vector3 MulVector3D(Vector3 v, double x);
+Vector4 MulVector4D(Vector4 v, double x);
 
 /* Scalar Division */
-inline Vector2 DivVector2D(Vector2 v, double x);
-inline Vector3 DivVector3D(Vector3 v, double x);
-inline Vector4 DivVector4D(Vector4 v, double x);
+Vector2 DivVector2D(Vector2 v, double x);
+Vector3 DivVector3D(Vector3 v, double x);
+Vector4 DivVector4D(Vector4 v, double x);
 
 /* Dot Product */
 double DotVector2(Vector2 v1, Vector2 v2);
@@ -92,6 +92,18 @@ double AngleVector4(Vector4 v1, Vector4 v2);
 Vector2 ProjectionVector2(Vector2 v1, Vector2 v2);
 Vector3 ProjectionVector3(Vector3 v1, Vector3 v2);
 Vector4 ProjectionVector4(Vector4 v1, Vector4 v2);
+
+/* some common and useful vectors */
+/* zero vector */
+#define ZeroVector2 GetVector2(0, 0)
+#define ZeroVector3 GetVector3(0, 0, 0)
+#define ZeroVector4 GetVector4(0, 0, 0, 0)
+
+/* unit x vector */
+/* unit y vector */
+/* unit z vector */
+/* unit w vector */
+
 
 #define CVECTOR_H
 #endif
