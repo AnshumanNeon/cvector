@@ -13,6 +13,6 @@ The current features include:
 
 ## How to use?
 
-Clone the repo and run `make` command to build the library. You'll recieve a `libcvector.a` in under the build/ directory inside your cloned repo. Link to that static library and add the `include` directory to your include path during the compilation process.
+Clone the repo and run `make` command to build the library. You'll recieve a `libcvector.a` in under the `build` directory inside your cloned repo. Link to that static library and add the `include` directory to your include path during the compilation process.
 
 ### By Anshuman
