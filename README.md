@@ -10,6 +10,7 @@ The current features include:
 - Normalization
 - Length and distances (squared too, for each)
 - Linear interpolation
+- Angle between vectors
 
 ## How to use?
 
