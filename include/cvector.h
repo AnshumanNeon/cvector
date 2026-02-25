@@ -31,75 +31,75 @@ Vector3 AddVector3(Vector3 v1, Vector3 v2, int* returnCode);
 Vector4 AddVector4(Vector4 v1, Vector4 v2, int* returnCode);
 
 /* Subtraction */
-Vector2 SubVector2(Vector2 v1, Vector2 v2);
-Vector3 SubVector3(Vector3 v1, Vector3 v2);
-Vector4 SubVector4(Vector4 v1, Vector4 v2);
+Vector2 SubVector2(Vector2 v1, Vector2 v2, int* returnCode);
+Vector3 SubVector3(Vector3 v1, Vector3 v2, int* returnCode);
+Vector4 SubVector4(Vector4 v1, Vector4 v2, int* returnCode);
 
 /* Scalar Multiplcation */
-Vector2 MulVector2D(Vector2 v, double x);
-Vector3 MulVector3D(Vector3 v, double x);
-Vector4 MulVector4D(Vector4 v, double x);
+Vector2 MulVector2D(Vector2 v, double x, int* returnCode);
+Vector3 MulVector3D(Vector3 v, double x, int* returnCode);
+Vector4 MulVector4D(Vector4 v, double x, int* returnCode);
 
 /* Scalar Division */
-Vector2 DivVector2D(Vector2 v, double x);
-Vector3 DivVector3D(Vector3 v, double x);
-Vector4 DivVector4D(Vector4 v, double x);
+Vector2 DivVector2D(Vector2 v, double x, int* returnCode);
+Vector3 DivVector3D(Vector3 v, double x, int* returnCode);
+Vector4 DivVector4D(Vector4 v, double x, int* returnCode);
 
 /* Dot Product */
-double DotVector2(Vector2 v1, Vector2 v2);
-double DotVector3(Vector3 v1, Vector3 v2);
-double DotVector4(Vector4 v1, Vector4 v2);
+double DotVector2(Vector2 v1, Vector2 v2, int* returnCode);
+double DotVector3(Vector3 v1, Vector3 v2, int* returnCode);
+double DotVector4(Vector4 v1, Vector4 v2, int* returnCode);
 
 /* Cross Product */
-double CrossVector2(Vector2 v1, Vector2 v2);
-Vector3 CrossVector3(Vector3 v1, Vector3 v2);
+double CrossVector2(Vector2 v1, Vector2 v2, int* returnCode);
+Vector3 CrossVector3(Vector3 v1, Vector3 v2, int* returnCode);
 
 /* Squared magnitude */
-double SqrMagVector2(Vector2 v);
-double SqrMagVector3(Vector3 v);
-double SqrMagVector4(Vector4 v);
+double SqrMagVector2(Vector2 v, int* returnCode);
+double SqrMagVector3(Vector3 v, int* returnCode);
+double SqrMagVector4(Vector4 v, int* returnCode);
 
 /* magnitude */
-double MagVector2(Vector2 v);
-double MagVector3(Vector3 v);
-double MagVector4(Vector4 v);
+double MagVector2(Vector2 v, int* returnCode);
+double MagVector3(Vector3 v, int* returnCode);
+double MagVector4(Vector4 v, int* returnCode);
 
 /* normalize vector */
-Vector2 NormVector2(Vector2 v);
-Vector3 NormVector3(Vector3 v);
-Vector4 NormVector4(Vector4 v);
+Vector2 NormVector2(Vector2 v, int* returnCode);
+Vector3 NormVector3(Vector3 v, int* returnCode);
+Vector4 NormVector4(Vector4 v, int* returnCode);
 
 /* hadamard product */
-Vector2 HadamardVector2(Vector2 v1, Vector2 v2);
-Vector3 HadamardVector3(Vector3 v1, Vector3 v2);
-Vector4 HadamardVector4(Vector4 v1, Vector4 v2);
+Vector2 HadamardVector2(Vector2 v1, Vector2 v2, int* returnCode);
+Vector3 HadamardVector3(Vector3 v1, Vector3 v2, int* returnCode);
+Vector4 HadamardVector4(Vector4 v1, Vector4 v2, int* returnCode);
 
 /* squared distance */
-double SqrDistanceVector2(Vector2 v1, Vector2 v2);
-double SqrDistanceVector3(Vector3 v1, Vector3 v2);
-double SqrDistanceVector4(Vector4 v1, Vector4 v2);
+double SqrDistanceVector2(Vector2 v1, Vector2 v2, int* returnCode);
+double SqrDistanceVector3(Vector3 v1, Vector3 v2, int* returnCode);
+double SqrDistanceVector4(Vector4 v1, Vector4 v2, int* returnCode);
 
 /* distance */
-double DistanceVector2(Vector2 v1, Vector2 v2);
-double DistanceVector3(Vector3 v1, Vector3 v2);
-double DistanceVector4(Vector4 v1, Vector4 v2);
+double DistanceVector2(Vector2 v1, Vector2 v2, int* returnCode);
+double DistanceVector3(Vector3 v1, Vector3 v2, int* returnCode);
+double DistanceVector4(Vector4 v1, Vector4 v2, int* returnCode);
 
 /* angle between vectors */
-double AngleVector2(Vector2 v1, Vector2 v2);
-double AngleVector3(Vector3 v1, Vector3 v2);
-double AngleVector4(Vector4 v1, Vector4 v2);
+double AngleVector2(Vector2 v1, Vector2 v2, int* returnCode);
+double AngleVector3(Vector3 v1, Vector3 v2, int* returnCode);
+double AngleVector4(Vector4 v1, Vector4 v2, int* returnCode);
 
 /* projection of v1 on v2 */
-Vector2 ProjectionVector2(Vector2 v1, Vector2 v2);
-Vector3 ProjectionVector3(Vector3 v1, Vector3 v2);
-Vector4 ProjectionVector4(Vector4 v1, Vector4 v2);
+Vector2 ProjectionVector2(Vector2 v1, Vector2 v2, int* returnCode);
+Vector3 ProjectionVector3(Vector3 v1, Vector3 v2, int* returnCode);
+Vector4 ProjectionVector4(Vector4 v1, Vector4 v2, int* returnCode);
 
 /* lerp */
 #define Lerp(a, b, t) (a*(1-t) + t*b)
 
-Vector2 LerpVector2(Vector2 v1, Vector2 v2, double x);
-Vector3 LerpVector3(Vector3 v1, Vector3 v2, double x);
-Vector4 LerpVector4(Vector4 v1, Vector4 v2, double x);
+Vector2 LerpVector2(Vector2 v1, Vector2 v2, double x, int* returnCode);
+Vector3 LerpVector3(Vector3 v1, Vector3 v2, double x, int* returnCode);
+Vector4 LerpVector4(Vector4 v1, Vector4 v2, double x, int* returnCode);
 
 /* some common and useful vectors */
 /* zero vector */
