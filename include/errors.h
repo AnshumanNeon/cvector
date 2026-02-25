@@ -10,10 +10,10 @@ enum CVectorCode {
   CVECTOR_UNDERFLOW_ERROR = 3,
   CVECTOR_INEXACT_VALUE = 4,
   CVECTOR_INVALID_ERROR = 5,
-  CVECTOR_FPE_UNSUPPORTED = 6;
+  CVECTOR_FPE_UNSUPPORTED = 6
 };
 
-CVectorCode GetErrorCode();
+int GetErrorCode();
 
 #define ERRORS_H
 #endif

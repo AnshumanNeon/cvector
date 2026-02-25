@@ -1,4 +1,5 @@
 #include "cvector.h"
+#include "errors.h"
 #include <math.h>
 
 /* vector initialization */
@@ -19,6 +20,7 @@ Vector4 GetVector4(double x, double y, double z, double w) {
 
 /* Addition */
 Vector2 AddVector2(Vector2 v1, Vector2 v2) {
+  GetErrorCode();
   Vector2 new = { .x = v1.x + v2.x, .y = v1.y + v2.y };
   return new;
 }

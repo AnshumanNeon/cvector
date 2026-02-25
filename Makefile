@@ -18,9 +18,9 @@ target = libcvector.a
 $(build_dir)/$(target): $(obj_files)
 	$(libtool) $(static) -o $@ $^
 
-$(obj_files): $(src_files)
+$(obj_files): build/%.o: src/%.c
 	mkdir -p build/
-	$(compiler) $(include_dirs) -c -o $@ $<
+	$(compiler) $(include_dirs) -c $^ -o $@
 
 test: $(build_dir)/$(target) test/test.c
 	$(compiler) $(test_compiler_flags) -Lbuild -lcvector $(include_dirs) test/test.c -o $(build_dir)/test
