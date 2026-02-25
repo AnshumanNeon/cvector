@@ -77,38 +77,32 @@ Vector4 MulVector4D(Vector4 v, double x, int* returnCode) {
 /* Scalar Divison */
 Vector2 DivVector2D(Vector2 v, double x, int* returnCode) {
   double inv_x = 1/x;
-  *returnCode = GetErrorCode();
-  return MulVector2D(v, inv_x);
+  return MulVector2D(v, inv_x, returnCode);
 }
 
 Vector3 DivVector3D(Vector3 v, double x, int* returnCode) {
   double inv_x = 1/x;
-  *returnCode = GetErrorCode();
-  return MulVector3D(v, inv_x);
+  return MulVector3D(v, inv_x, returnCode);
 }
 
 Vector4 DivVector4D(Vector4 v, double x, int* returnCode) {
   double inv_x = 1/x;
-  *returnCode = GetErrorCode();
-  return MulVector4D(v, inv_x);
+  return MulVector4D(v, inv_x, returnCode);
 }
 
 /* Dot Product */
 double DotVector2(Vector2 v1, Vector2 v2, int* returnCode) {
   double dot = v1.x * v2.x + v1.y * v2.y;
-  *returnCode = GetErrorCode();
   return dot;
 }
 
 double DotVector3(Vector3 v1, Vector3 v2, int* returnCode) {
   double dot = v1.x * v2.x + v1.y * v2.y + v1.z * v2.z;
-  *returnCode = GetErrorCode();
   return dot;
 }
 
 double DotVector4(Vector4 v1, Vector4 v2, int* returnCode) {
   double dot = v1.x * v2.x + v1.y * v2.y + v1.z * v2.z + v1.w * v2.w;
-  *returnCode = GetErrorCode();
   return dot;
 }
 
@@ -143,22 +137,22 @@ double SqrMagVector4(Vector4 v, int* returnCode) {
 
 /* magnitude */
 double MagVector2(Vector2 v, int* returnCode) {
-  return sqrt(SqrMagVector2(v));
+  return sqrt(SqrMagVector2(v, returnCode));
 }
 
 double MagVector3(Vector3 v, int* returnCode) {
-  return sqrt(SqrMagVector3(v));
+  return sqrt(SqrMagVector3(v, returnCode));
 }
 
 double MagVector4(Vector4 v, int* returnCode) {
-  return sqrt(SqrMagVector4(v));
+  return sqrt(SqrMagVector4(v, returnCode));
 }
 
 /* normalize
    vector */
 Vector2 NormVector2(Vector2 v, int* returnCode) {
   Vector2 result;
-  double mag = MagVector2(v);
+  double mag = MagVector2(v, returnCode);
   result.x = v.x / mag;
   result.y = v.y / mag;
 
@@ -168,7 +162,7 @@ Vector2 NormVector2(Vector2 v, int* returnCode) {
 
 Vector3 NormVector3(Vector3 v, int* returnCode) {
   Vector3 result;
-  double mag = MagVector3(v);
+  double mag = MagVector3(v, returnCode);
   result.x = v.x / mag;
   result.y = v.y / mag;
   result.z = v.z / mag;
@@ -179,7 +173,7 @@ Vector3 NormVector3(Vector3 v, int* returnCode) {
 
 Vector4 NormVector4(Vector4 v, int* returnCode) {
   Vector4 result;
-  double mag = MagVector4(v);
+  double mag = MagVector4(v, returnCode);
   result.x = v.x / mag;
   result.y = v.y / mag;
   result.z = v.z / mag;
@@ -210,54 +204,54 @@ Vector4 HadamardVector4(Vector4 v1, Vector4 v2, int* returnCode) {
 
 /* squared distance */
 double SqrDistanceVector2(Vector2 v1, Vector2 v2, int* returnCode) {
-  return SqrMagVector2(SubVector2(v1, v2));
+  return SqrMagVector2(SubVector2(v1, v2, returnCode), returnCode);
 }
 
 double SqrDistanceVector3(Vector3 v1, Vector3 v2, int* returnCode) {
-  return SqrMagVector3(SubVector3(v1, v2));
+  return SqrMagVector3(SubVector3(v1, v2, returnCode), returnCode);
 }
 
 double SqrDistanceVector4(Vector4 v1, Vector4 v2, int* returnCode) {
-  return SqrMagVector4(SubVector4(v1, v2));
+  return SqrMagVector4(SubVector4(v1, v2, returnCode), returnCode);
 }
 
 /* distance */
 double DistanceVector2(Vector2 v1, Vector2 v2, int* returnCode) {
-  return MagVector2(SubVector2(v1, v2));
+  return MagVector2(SubVector2(v1, v2, returnCode), returnCode);
 }
 
 double DistanceVector3(Vector3 v1, Vector3 v2, int* returnCode) {
-  return MagVector3(SubVector3(v1, v2));
+  return MagVector3(SubVector3(v1, v2, returnCode), returnCode);
 }
 
 double DistanceVector4(Vector4 v1, Vector4 v2, int* returnCode) {
-  return MagVector4(SubVector4(v1, v2));
+  return MagVector4(SubVector4(v1, v2, returnCode), returnCode);
 }
 
 /* angle between vectors */
 double AngleVector2(Vector2 v1, Vector2 v2, int* returnCode) {
-  return acos(DotVector2(v1, v2) / (MagVector2(v1) * MagVector2(v2)));
+  return acos(DotVector2(v1, v2, returnCode) / (MagVector2(v1, returnCode) * MagVector2(v2, returnCode)));
 }
 
 double AngleVector3(Vector3 v1, Vector3 v2, int* returnCode) {
-  return acos(DotVector3(v1, v2) / (MagVector3(v1) * MagVector3(v2)));
+  return acos(DotVector3(v1, v2, returnCode) / (MagVector3(v1, returnCode) * MagVector3(v2, returnCode)));
 }
 
 double AngleVector4(Vector4 v1, Vector4 v2, int* returnCode) {
-  return acos(DotVector4(v1, v2) / (MagVector4(v1) * MagVector4(v2)));
+  return acos(DotVector4(v1, v2, returnCode) / (MagVector4(v1, returnCode) * MagVector4(v2, returnCode)));
 }
 
 /* projection of v1 on v2 */
 Vector2 ProjectionVector2(Vector2 v1, Vector2 v2, int* returnCode) {
-  return MulVector2D(v2, (DotVector2(v1, v2) / MagVector2(v2)));
+  return MulVector2D(v2, (DotVector2(v1, v2, returnCode) / MagVector2(v2, returnCode)), returnCode);
 }
 
 Vector3 ProjectionVector3(Vector3 v1, Vector3 v2, int* returnCode) {
-  return MulVector3D(v2, (DotVector3(v1, v2) / MagVector3(v2)));
+  return MulVector3D(v2, (DotVector3(v1, v2, returnCode) / MagVector3(v2, returnCode)), returnCode);
 }
 
 Vector4 ProjectionVector4(Vector4 v1, Vector4 v2, int* returnCode) {
-  return MulVector4D(v2, (DotVector4(v1, v2) / MagVector4(v2)));
+  return MulVector4D(v2, (DotVector4(v1, v2, returnCode) / MagVector4(v2, returnCode)), returnCode);
 }
 
 /* lerp */
