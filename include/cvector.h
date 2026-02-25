@@ -1,4 +1,5 @@
 #ifndef CVECTOR_H
+#include "errors.h"
 
 /* Vector struct definitions */
 typedef struct Vector2_ST {
@@ -25,9 +26,9 @@ Vector3 GetVector3(double x, double y, double z);
 Vector4 GetVector4(double x, double y, double z, double w);
 
 /* Addition */
-Vector2 AddVector2(Vector2 v1, Vector2 v2);
-Vector3 AddVector3(Vector3 v1, Vector3 v2);
-Vector4 AddVector4(Vector4 v1, Vector4 v2);
+Vector2 AddVector2(Vector2 v1, Vector2 v2, int* returnCode);
+Vector3 AddVector3(Vector3 v1, Vector3 v2, int* returnCode);
+Vector4 AddVector4(Vector4 v1, Vector4 v2, int* returnCode);
 
 /* Subtraction */
 Vector2 SubVector2(Vector2 v1, Vector2 v2);

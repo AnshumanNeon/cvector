@@ -1,8 +1,6 @@
 #ifndef ERRORS_H
 #include <fenv.h>
 
-#pragma STDC FENV_ACCESS ON
-
 enum CVectorCode {
   CVECTOR_SUCCESS = 0,
   CVECTOR_ZERO_DIVISON_ERROR = 1,

@@ -11,19 +11,19 @@ int GetErrorCode() {
   }
 
   if(fetestexcept(FE_DIVBYZERO)) {
-    error_code = error_code || CVECTOR_ZERO_DIVISON_ERROR;
+    error_code = CVECTOR_ZERO_DIVISON_ERROR;
   }
   if(fetestexcept(FE_INEXACT)) {
-    error_code = error_code || CVECTOR_INEXACT_VALUE;
+    error_code = CVECTOR_INEXACT_VALUE;
   }
   if(fetestexcept(FE_INVALID)) {
-    error_code = error_code || CVECTOR_INVALID_ERROR;
+    error_code = CVECTOR_INVALID_ERROR;
   }
   if(fetestexcept(FE_OVERFLOW)) {
-    error_code = error_code || CVECTOR_OVERFLOW_ERROR;
+    error_code = CVECTOR_OVERFLOW_ERROR;
   }
   if(fetestexcept(FE_UNDERFLOW)) {
-    error_code = error_code || CVECTOR_UNDERFLOW_ERROR;
+    error_code = CVECTOR_UNDERFLOW_ERROR;
   }
   
   feclearexcept(FE_ALL_EXCEPT);
