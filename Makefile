@@ -25,6 +25,9 @@ $(obj_files): build/%.o: src/%.c
 test: $(build_dir)/$(target) test/test.c
 	$(compiler) $(test_compiler_flags) -Lbuild -lcvector $(include_dirs) test/test.c -o $(build_dir)/test
 
+run: test
+	$(build_dir)/test
+
 .PHONY: $(obj_files) $(build_dir)/$(target) clean test
 
 clean:

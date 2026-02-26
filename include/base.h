@@ -23,26 +23,26 @@ typedef struct Vector4_ST {
 
 /* some common and useful vectors */
 /* zero vector */
-#define ZeroVector2 GetVector2(0, 0)
-#define ZeroVector3 GetVector3(0, 0, 0)
-#define ZeroVector4 GetVector4(0, 0, 0, 0)
+#define ZeroVector2 (Vector2){0}
+#define ZeroVector3 (Vector3){0}
+#define ZeroVector4 (Vector4){0}
 
 /* unit x vector */
-#define UnitXVector2 GetVector2(1, 0)
-#define UnitXVector3 GetVector3(1, 0, 0)
-#define UnitXVector4 GetVector4(1, 0, 0, 0)
+#define UnitXVector2 (Vector2){1, 0}
+#define UnitXVector3 (Vector3){1, 0, 0}
+#define UnitXVector4 (Vector4){1, 0, 0, 0}
 
 /* unit y vector */
-#define UnitYVector2 GetVector2(0, 1)
-#define UnitYVector3 GetVector3(0, 1, 0)
-#define UnitYVector4 GetVector4(0, 1, 0, 0)
+#define UnitYVector2 (Vector2){0, 1}
+#define UnitYVector3 (Vector3){0, 1, 0}
+#define UnitYVector4 (Vector4){0, 1, 0, 0}
 
 /* unit z vector */
-#define UnitZVector3 GetVector3(0, 0, 1)
-#define UnitZVector4 GetVector4(0, 0, 1, 0)
+#define UnitZVector3 (Vector3){0, 0, 1}
+#define UnitZVector4 (Vector4){0, 0, 1, 0}
 
 /* unit w vector */
-#define UnitWVector4 GetVector4(0, 0, 0, 1)
+#define UnitWVector4 (Vector4){0, 0, 0, 1}
 
 #define BASE_H
 #endif
