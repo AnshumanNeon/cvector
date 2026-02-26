@@ -255,14 +255,20 @@ Vector4 ProjectionVector4(Vector4 v1, Vector4 v2, int* returnCode) {
 }
 
 /* lerp */
+CVECTOR_VALUE Lerp(CVECTOR_VALUE a, CVECTOR_VALUE b, CVECTOR_VALUE t, int* returnCode) {
+  CVECTOR_VALUE result = a * (1 - t) + t * b;
+  *returnCode = GetErrorCode();
+  return result
+}
+
 Vector2 LerpVector2(Vector2 v1, Vector2 v2, CVECTOR_VALUE x, int* returnCode) {
-  return GetVector2(Lerp(v1.x, v2.x, x), Lerp(v1.y, v2.y, x));
+  return GetVector2(Lerp(v1.x, v2.x, x, returnCode), Lerp(v1.y, v2.y, x, returnCode));
 }
 
 Vector3 LerpVector3(Vector3 v1, Vector3 v2, CVECTOR_VALUE x, int* returnCode) {
-  return GetVector3(Lerp(v1.x, v2.x, x), Lerp(v1.y, v2.y, x), Lerp(v1.z, v2.z, x));
+  return GetVector3(Lerp(v1.x, v2.x, x, returnCode), Lerp(v1.y, v2.y, x, returnCode), Lerp(v1.z, v2.z, x, returnCode));
 }
 
 Vector4 LerpVector4(Vector4 v1, Vector4 v2, CVECTOR_VALUE x, int* returnCode) {
-  return GetVector4(Lerp(v1.x, v2.x, x), Lerp(v1.y, v2.y, x), Lerp(v1.z, v2.z, x), Lerp(v1.w, v2.w, x));
+  return GetVector4(Lerp(v1.x, v2.x, x, returnCode), Lerp(v1.y, v2.y, x, returnCode), Lerp(v1.z, v2.z, x, returnCode), Lerp(v1.w, v2.w, x, returnCode));
 }
