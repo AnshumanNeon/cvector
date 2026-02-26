@@ -1,4 +1,4 @@
-#ifndef ERRORS_H
+#ifndef CVECTOR_ERRORS_H
 #include <fenv.h>
 
 enum CVectorCode {
@@ -13,5 +13,5 @@ enum CVectorCode {
 
 int GetErrorCode();
 
-#define ERRORS_H
+#define CVECTOR_ERRORS_H
 #endif

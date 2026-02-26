@@ -1,4 +1,4 @@
-#ifndef BASE_H
+#ifndef CVECTOR_BASE_H
 #include "precision.h"
 
 /* Vector struct definitions */
@@ -43,5 +43,5 @@ typedef struct Vector4_ST {
 /* unit w vector */
 #define UnitWVector4 (Vector4){0, 0, 0, 1}
 
-#define BASE_H
+#define CVECTOR_BASE_H
 #endif

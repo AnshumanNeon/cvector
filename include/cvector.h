@@ -1,4 +1,4 @@
-#ifndef CVECTOR_H
+#ifndef CVECTOR_MAIN_H
 #include "base.h"
 #include "errors.h"
 
@@ -82,5 +82,5 @@ Vector2 LerpVector2(Vector2 v1, Vector2 v2, CVECTOR_VALUE x, int* returnCode);
 Vector3 LerpVector3(Vector3 v1, Vector3 v2, CVECTOR_VALUE x, int* returnCode);
 Vector4 LerpVector4(Vector4 v1, Vector4 v2, CVECTOR_VALUE x, int* returnCode);
 
-#define CVECTOR_H
+#define CVECTOR_MAIN_H
 #endif

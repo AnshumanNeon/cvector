@@ -1,4 +1,4 @@
-#ifndef PRECISION_H
+#ifndef CVECTOR_PRECISION_H
 #include <math.h>
 
 #if defined(CVECTOR_USE_FLOAT)
@@ -15,5 +15,5 @@
 #define CVECTOR_ACOS acosl
 #endif
 
-#define PRECISION_H
+#define CVECTOR_PRECISION_H
 #endif
