@@ -40,4 +40,14 @@ if(returnCode & CVECTOR_OVERFLOW_ERROR) {
 The following are the error flags that can be raised:
 `CVECTOR_SUCCESS, CVECTOR_ZERO_DIVISON_ERROR, CVECTOR_OVERFLOW_ERROR, CVECTOR_UNDERFLOW_ERROR, CVECTOR_INEXACT_VALUE, CVECTOR_INVALID_ERROR, CVECTOR_FPE_UNSUPPORTED`
 
+## Precision
+
+The library by default uses `long double` to store vector components and return values. But due to platform and hardware specific implementations of it, it is rather variable as to the exact precision it provides. For example: The Microsoft Visual C++ for x86, `long double` is made synonymous to `double` while the GNU C Compiler implements `long double` as an 80-bit extended precision on x86 processors irrespective of the actual physical storage used for the type (which can be either 96 or 128 bits).
+
+The library also provides the flexibility to change the precision to `float` or `double` if it is required. This is done by defining macros. It is reccomended that the macros are defined globally (preferably at compile time) and not locally (example- in the source files themselves) as that might lead to ABI inconsistency (different files might get compiled with different precisions and that can lead to precision loss or even conversion errors).
+
+To use `float` as your preferred precision, define the `CVECTOR_USE_FLOAT` macro at compile time (like ` ... -DCVECTOR_USE_FLOAT ...`)
+
+To use `double` as your preferred precision, define the `CVECTOR_USE_DOUBLE` macro at compile time (like ` ... -DCVECTOR_USE_DOUBLE ...`)
+
 ### By Anshuman
