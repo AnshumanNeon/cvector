@@ -1,29 +1,11 @@
 #ifndef CVECTOR_H
+#include "base.h"
 #include "errors.h"
 
-/* Vector struct definitions */
-typedef struct Vector2_ST {
-  long double x;
-  long double y;
-} Vector2;
-
-typedef struct Vector3_ST {
-  long double x;
-  long double y;
-  long double z;
-} Vector3;
-
-typedef struct Vector4_ST {
-  long double x;
-  long double y;
-  long double z;
-  long double w;
-} Vector4;
-
 /* vector initiliasation */
-Vector2 GetVector2(double x, double y);
-Vector3 GetVector3(double x, double y, double z);
-Vector4 GetVector4(double x, double y, double z, double w);
+Vector2 GetVector2(CVECTOR_VALUE x, CVECTOR_VALUE y);
+Vector3 GetVector3(CVECTOR_VALUE x, CVECTOR_VALUE y, CVECTOR_VALUE z);
+Vector4 GetVector4(CVECTOR_VALUE x, CVECTOR_VALUE y, CVECTOR_VALUE z, CVECTOR_VALUE w);
 
 /* Addition */
 Vector2 AddVector2(Vector2 v1, Vector2 v2, int* returnCode);
@@ -36,33 +18,33 @@ Vector3 SubVector3(Vector3 v1, Vector3 v2, int* returnCode);
 Vector4 SubVector4(Vector4 v1, Vector4 v2, int* returnCode);
 
 /* Scalar Multiplcation */
-Vector2 MulVector2D(Vector2 v, double x, int* returnCode);
-Vector3 MulVector3D(Vector3 v, double x, int* returnCode);
-Vector4 MulVector4D(Vector4 v, double x, int* returnCode);
+Vector2 MulVector2D(Vector2 v, CVECTOR_VALUE x, int* returnCode);
+Vector3 MulVector3D(Vector3 v, CVECTOR_VALUE x, int* returnCode);
+Vector4 MulVector4D(Vector4 v, CVECTOR_VALUE x, int* returnCode);
 
 /* Scalar Division */
-Vector2 DivVector2D(Vector2 v, double x, int* returnCode);
-Vector3 DivVector3D(Vector3 v, double x, int* returnCode);
-Vector4 DivVector4D(Vector4 v, double x, int* returnCode);
+Vector2 DivVector2D(Vector2 v, CVECTOR_VALUE x, int* returnCode);
+Vector3 DivVector3D(Vector3 v, CVECTOR_VALUE x, int* returnCode);
+Vector4 DivVector4D(Vector4 v, CVECTOR_VALUE x, int* returnCode);
 
 /* Dot Product */
-double DotVector2(Vector2 v1, Vector2 v2, int* returnCode);
-double DotVector3(Vector3 v1, Vector3 v2, int* returnCode);
-double DotVector4(Vector4 v1, Vector4 v2, int* returnCode);
+CVECTOR_VALUE DotVector2(Vector2 v1, Vector2 v2, int* returnCode);
+CVECTOR_VALUE DotVector3(Vector3 v1, Vector3 v2, int* returnCode);
+CVECTOR_VALUE DotVector4(Vector4 v1, Vector4 v2, int* returnCode);
 
 /* Cross Product */
-double CrossVector2(Vector2 v1, Vector2 v2, int* returnCode);
+CVECTOR_VALUE CrossVector2(Vector2 v1, Vector2 v2, int* returnCode);
 Vector3 CrossVector3(Vector3 v1, Vector3 v2, int* returnCode);
 
 /* Squared magnitude */
-double SqrMagVector2(Vector2 v, int* returnCode);
-double SqrMagVector3(Vector3 v, int* returnCode);
-double SqrMagVector4(Vector4 v, int* returnCode);
+CVECTOR_VALUE SqrMagVector2(Vector2 v, int* returnCode);
+CVECTOR_VALUE SqrMagVector3(Vector3 v, int* returnCode);
+CVECTOR_VALUE SqrMagVector4(Vector4 v, int* returnCode);
 
 /* magnitude */
-double MagVector2(Vector2 v, int* returnCode);
-double MagVector3(Vector3 v, int* returnCode);
-double MagVector4(Vector4 v, int* returnCode);
+CVECTOR_VALUE MagVector2(Vector2 v, int* returnCode);
+CVECTOR_VALUE MagVector3(Vector3 v, int* returnCode);
+CVECTOR_VALUE MagVector4(Vector4 v, int* returnCode);
 
 /* normalize vector */
 Vector2 NormVector2(Vector2 v, int* returnCode);
@@ -75,19 +57,19 @@ Vector3 HadamardVector3(Vector3 v1, Vector3 v2, int* returnCode);
 Vector4 HadamardVector4(Vector4 v1, Vector4 v2, int* returnCode);
 
 /* squared distance */
-double SqrDistanceVector2(Vector2 v1, Vector2 v2, int* returnCode);
-double SqrDistanceVector3(Vector3 v1, Vector3 v2, int* returnCode);
-double SqrDistanceVector4(Vector4 v1, Vector4 v2, int* returnCode);
+CVECTOR_VALUE SqrDistanceVector2(Vector2 v1, Vector2 v2, int* returnCode);
+CVECTOR_VALUE SqrDistanceVector3(Vector3 v1, Vector3 v2, int* returnCode);
+CVECTOR_VALUE SqrDistanceVector4(Vector4 v1, Vector4 v2, int* returnCode);
 
 /* distance */
-double DistanceVector2(Vector2 v1, Vector2 v2, int* returnCode);
-double DistanceVector3(Vector3 v1, Vector3 v2, int* returnCode);
-double DistanceVector4(Vector4 v1, Vector4 v2, int* returnCode);
+CVECTOR_VALUE DistanceVector2(Vector2 v1, Vector2 v2, int* returnCode);
+CVECTOR_VALUE DistanceVector3(Vector3 v1, Vector3 v2, int* returnCode);
+CVECTOR_VALUE DistanceVector4(Vector4 v1, Vector4 v2, int* returnCode);
 
 /* angle between vectors */
-double AngleVector2(Vector2 v1, Vector2 v2, int* returnCode);
-double AngleVector3(Vector3 v1, Vector3 v2, int* returnCode);
-double AngleVector4(Vector4 v1, Vector4 v2, int* returnCode);
+CVECTOR_VALUE AngleVector2(Vector2 v1, Vector2 v2, int* returnCode);
+CVECTOR_VALUE AngleVector3(Vector3 v1, Vector3 v2, int* returnCode);
+CVECTOR_VALUE AngleVector4(Vector4 v1, Vector4 v2, int* returnCode);
 
 /* projection of v1 on v2 */
 Vector2 ProjectionVector2(Vector2 v1, Vector2 v2, int* returnCode);
@@ -97,32 +79,9 @@ Vector4 ProjectionVector4(Vector4 v1, Vector4 v2, int* returnCode);
 /* lerp */
 #define Lerp(a, b, t) (a*(1-t) + t*b)
 
-Vector2 LerpVector2(Vector2 v1, Vector2 v2, double x, int* returnCode);
-Vector3 LerpVector3(Vector3 v1, Vector3 v2, double x, int* returnCode);
-Vector4 LerpVector4(Vector4 v1, Vector4 v2, double x, int* returnCode);
-
-/* some common and useful vectors */
-/* zero vector */
-#define ZeroVector2 GetVector2(0, 0)
-#define ZeroVector3 GetVector3(0, 0, 0)
-#define ZeroVector4 GetVector4(0, 0, 0, 0)
-
-/* unit x vector */
-#define UnitXVector2 GetVector2(1, 0)
-#define UnitXVector3 GetVector3(1, 0, 0)
-#define UnitXVector4 GetVector4(1, 0, 0, 0)
-
-/* unit y vector */
-#define UnitYVector2 GetVector2(0, 1)
-#define UnitYVector3 GetVector3(0, 1, 0)
-#define UnitYVector4 GetVector4(0, 1, 0, 0)
-
-/* unit z vector */
-#define UnitZVector3 GetVector3(0, 0, 1)
-#define UnitZVector4 GetVector4(0, 0, 1, 0)
-
-/* unit w vector */
-#define UnitWVector4 GetVector4(0, 0, 0, 1)
+Vector2 LerpVector2(Vector2 v1, Vector2 v2, CVECTOR_VALUE x, int* returnCode);
+Vector3 LerpVector3(Vector3 v1, Vector3 v2, CVECTOR_VALUE x, int* returnCode);
+Vector4 LerpVector4(Vector4 v1, Vector4 v2, CVECTOR_VALUE x, int* returnCode);
 
 #define CVECTOR_H
 #endif

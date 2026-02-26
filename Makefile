@@ -20,7 +20,7 @@ $(build_dir)/$(target): $(obj_files)
 
 $(obj_files): build/%.o: src/%.c
 	mkdir -p build/
-	$(compiler) $(include_dirs) -c $^ -o $@
+	$(compiler) $(compiler_flags) $(include_dirs) -c $^ -o $@
 
 test: $(build_dir)/$(target) test/test.c
 	$(compiler) $(test_compiler_flags) -Lbuild -lcvector $(include_dirs) test/test.c -o $(build_dir)/test
