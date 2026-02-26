@@ -2,7 +2,7 @@ compiler = gcc-mp-14
 libtool = libtool
 static = -static
 
-compiler_flags = -Wall -Werror -Wpedantic
+compiler_flags = -Wall -Werror -Wpedantic -Wextra
 include_dirs = -Iinclude
 
 test_compiler_flags = -Wall -Werror -Wpedantic

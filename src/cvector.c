@@ -93,22 +93,27 @@ Vector4 DivVector4D(Vector4 v, CVECTOR_VALUE x, int* returnCode) {
 /* Dot Product */
 CVECTOR_VALUE DotVector2(Vector2 v1, Vector2 v2, int* returnCode) {
   CVECTOR_VALUE dot = v1.x * v2.x + v1.y * v2.y;
+  *returnCode = GetErrorCode();
   return dot;
 }
 
 CVECTOR_VALUE DotVector3(Vector3 v1, Vector3 v2, int* returnCode) {
   CVECTOR_VALUE dot = v1.x * v2.x + v1.y * v2.y + v1.z * v2.z;
+  *returnCode = GetErrorCode();
   return dot;
 }
 
 CVECTOR_VALUE DotVector4(Vector4 v1, Vector4 v2, int* returnCode) {
   CVECTOR_VALUE dot = v1.x * v2.x + v1.y * v2.y + v1.z * v2.z + v1.w * v2.w;
+  *returnCode = GetErrorCode();
   return dot;
 }
 
 /* Cross Multiplication */
 CVECTOR_VALUE CrossVector2(Vector2 v1, Vector2 v2, int* returnCode) {
-  return v1.x * v2.y - v2.x * v1.y;
+  CVECTOR_VALUE result = v1.x * v2.y - v2.x * v1.y;
+  *returnCode = GetErrorCode();
+  return result;
 }
 
 Vector3 CrossVector3(Vector3 v1, Vector3 v2, int* returnCode) {
