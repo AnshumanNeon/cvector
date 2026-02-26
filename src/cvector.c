@@ -1,5 +1,4 @@
 #include "cvector.h"
-#include <math.h>
 
 /* vector initialization */
 Vector2 GetVector2(CVECTOR_VALUE x, CVECTOR_VALUE y) {
@@ -148,19 +147,19 @@ CVECTOR_VALUE SqrMagVector4(Vector4 v, int* returnCode) {
 
 /* magnitude */
 CVECTOR_VALUE MagVector2(Vector2 v, int* returnCode) {
-  CVECTOR_VALUE result = sqrt(SqrMagVector2(v, returnCode));
+  CVECTOR_VALUE result = CVECTOR_SQRT(SqrMagVector2(v, returnCode));
   *returnCode = GetErrorCode();
   return result;
 }
 
 CVECTOR_VALUE MagVector3(Vector3 v, int* returnCode) {
-  CVECTOR_VALUE result = sqrt(SqrMagVector3(v, returnCode));
+  CVECTOR_VALUE result = CVECTOR_SQRT(SqrMagVector3(v, returnCode));
   *returnCode = GetErrorCode();
   return result;
 }
 
 CVECTOR_VALUE MagVector4(Vector4 v, int* returnCode) {
-  CVECTOR_VALUE result = sqrt(SqrMagVector4(v, returnCode));
+  CVECTOR_VALUE result = CVECTOR_SQRT(SqrMagVector4(v, returnCode));
   *returnCode = GetErrorCode();
   return result;
 }
@@ -231,15 +230,15 @@ CVECTOR_VALUE DistanceVector4(Vector4 v1, Vector4 v2, int* returnCode) {
 
 /* angle between vectors */
 CVECTOR_VALUE AngleVector2(Vector2 v1, Vector2 v2, int* returnCode) {
-  return acos(DotVector2(v1, v2, returnCode) / (MagVector2(v1, returnCode) * MagVector2(v2, returnCode)));
+  return CVECTOR_ACOS(DotVector2(v1, v2, returnCode) / (MagVector2(v1, returnCode) * MagVector2(v2, returnCode)));
 }
 
 CVECTOR_VALUE AngleVector3(Vector3 v1, Vector3 v2, int* returnCode) {
-  return acos(DotVector3(v1, v2, returnCode) / (MagVector3(v1, returnCode) * MagVector3(v2, returnCode)));
+  return CVECTOR_ACOS(DotVector3(v1, v2, returnCode) / (MagVector3(v1, returnCode) * MagVector3(v2, returnCode)));
 }
 
 CVECTOR_VALUE AngleVector4(Vector4 v1, Vector4 v2, int* returnCode) {
-  return acos(DotVector4(v1, v2, returnCode) / (MagVector4(v1, returnCode) * MagVector4(v2, returnCode)));
+  return CVECTOR_ACOS(DotVector4(v1, v2, returnCode) / (MagVector4(v1, returnCode) * MagVector4(v2, returnCode)));
 }
 
 /* projection of v1 on v2 */
@@ -263,13 +262,13 @@ CVECTOR_VALUE CVectorLerp(CVECTOR_VALUE a, CVECTOR_VALUE b, CVECTOR_VALUE t, int
 }
 
 Vector2 LerpVector2(Vector2 v1, Vector2 v2, CVECTOR_VALUE x, int* returnCode) {
-  return GetVector2(Lerp(v1.x, v2.x, x, returnCode), Lerp(v1.y, v2.y, x, returnCode));
+  return GetVector2(CVectorLerp(v1.x, v2.x, x, returnCode), CVectorLerp(v1.y, v2.y, x, returnCode));
 }
 
 Vector3 LerpVector3(Vector3 v1, Vector3 v2, CVECTOR_VALUE x, int* returnCode) {
-  return GetVector3(Lerp(v1.x, v2.x, x, returnCode), Lerp(v1.y, v2.y, x, returnCode), Lerp(v1.z, v2.z, x, returnCode));
+  return GetVector3(CVectorLerp(v1.x, v2.x, x, returnCode), CVectorLerp(v1.y, v2.y, x, returnCode), CVectorLerp(v1.z, v2.z, x, returnCode));
 }
 
 Vector4 LerpVector4(Vector4 v1, Vector4 v2, CVECTOR_VALUE x, int* returnCode) {
-  return GetVector4(Lerp(v1.x, v2.x, x, returnCode), Lerp(v1.y, v2.y, x, returnCode), Lerp(v1.z, v2.z, x, returnCode), Lerp(v1.w, v2.w, x, returnCode));
+  return GetVector4(CVectorLerp(v1.x, v2.x, x, returnCode), CVectorLerp(v1.y, v2.y, x, returnCode), CVectorLerp(v1.z, v2.z, x, returnCode), CVectorLerp(v1.w, v2.w, x, returnCode));
 }
