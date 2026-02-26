@@ -124,62 +124,58 @@ Vector3 CrossVector3(Vector3 v1, Vector3 v2, int* returnCode) {
 
 /* magnitude */
 CVECTOR_VALUE SqrMagVector2(Vector2 v, int* returnCode) {
-  return (v.x * v.x + v.y * v.y);
+  CVECTOR_VALUE result = (v.x * v.x + v.y * v.y);
+  *returnCode = GetErrorCode();
+  return result;
 }
 
 CVECTOR_VALUE SqrMagVector3(Vector3 v, int* returnCode) {
-  return (v.x * v.x + v.y * v.y + v.z * v.z);
+  CVECTOR_VALUE result = (v.x * v.x + v.y * v.y + v.z * v.z);
+  *returnCode = GetErrorCode();
+  return result;
 }
 
 CVECTOR_VALUE SqrMagVector4(Vector4 v, int* returnCode) {
-  return (v.x * v.x + v.y * v.y + v.z * v.z + v.w * v.w);
+  CVECTOR_VALUE result = (v.x * v.x + v.y * v.y + v.z * v.z + v.w * v.w);
+  *returnCode = GetErrorCode();
+  return result;
 }
 
 /* magnitude */
 CVECTOR_VALUE MagVector2(Vector2 v, int* returnCode) {
-  return sqrt(SqrMagVector2(v, returnCode));
+  CVECTOR_VALUE result = sqrt(SqrMagVector2(v, returnCode));
+  *returnCode = GetErrorCode();
+  return result;
 }
 
 CVECTOR_VALUE MagVector3(Vector3 v, int* returnCode) {
-  return sqrt(SqrMagVector3(v, returnCode));
+  CVECTOR_VALUE result = sqrt(SqrMagVector3(v, returnCode));
+  *returnCode = GetErrorCode();
+  return result;
 }
 
 CVECTOR_VALUE MagVector4(Vector4 v, int* returnCode) {
-  return sqrt(SqrMagVector4(v, returnCode));
+  CVECTOR_VALUE result = sqrt(SqrMagVector4(v, returnCode));
+  *returnCode = GetErrorCode();
+  return result;
 }
 
-/* normalize
-   vector */
+/* normalize vector */
 Vector2 NormVector2(Vector2 v, int* returnCode) {
-  Vector2 result;
   CVECTOR_VALUE mag = MagVector2(v, returnCode);
-  result.x = v.x / mag;
-  result.y = v.y / mag;
-
-  *returnCode = GetErrorCode();
+  Vector2 result = DivVector2D(v, mag, returnCode);
   return result;
 }
 
 Vector3 NormVector3(Vector3 v, int* returnCode) {
-  Vector3 result;
   CVECTOR_VALUE mag = MagVector3(v, returnCode);
-  result.x = v.x / mag;
-  result.y = v.y / mag;
-  result.z = v.z / mag;
-
-  *returnCode = GetErrorCode();
+  Vector3 result = DivVector3D(v, mag, returnCode);
   return result;
 }
 
 Vector4 NormVector4(Vector4 v, int* returnCode) {
-  Vector4 result;
   CVECTOR_VALUE mag = MagVector4(v, returnCode);
-  result.x = v.x / mag;
-  result.y = v.y / mag;
-  result.z = v.z / mag;
-  result.w = v.w / mag;
-
-  *returnCode = GetErrorCode();
+  Vector4 result = DivVector4D(v, mag, returnCode);
   return result;
 }
 
