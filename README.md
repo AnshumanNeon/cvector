@@ -26,7 +26,7 @@ If no error flags are raised and the operation is successful then the `returnCod
 To check for specific flags, the user has to perform a bitwise AND (`&&`) operation on the `returnCode`. If the result is `1` then the error flag has been raised.
 
 Here is an example of how to handle errors:
-```
+```C
 int returnCode;
 Vector2 a = { .x = 1, .y = 2 };
 Vector2 b = { .x = 3, .y = 1 };
