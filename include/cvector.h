@@ -77,7 +77,7 @@ Vector3 ProjectionVector3(Vector3 v1, Vector3 v2, int* returnCode);
 Vector4 ProjectionVector4(Vector4 v1, Vector4 v2, int* returnCode);
 
 /* lerp */
-CVECTOR_VALUE Lerp(CVECTOR_VALUE a, CVECTOR_VALUE b, CVECTOR_VALUE t, int* returnCode);
+CVECTOR_VALUE CVectorLerp(CVECTOR_VALUE a, CVECTOR_VALUE b, CVECTOR_VALUE t, int* returnCode);
 Vector2 LerpVector2(Vector2 v1, Vector2 v2, CVECTOR_VALUE x, int* returnCode);
 Vector3 LerpVector3(Vector3 v1, Vector3 v2, CVECTOR_VALUE x, int* returnCode);
 Vector4 LerpVector4(Vector4 v1, Vector4 v2, CVECTOR_VALUE x, int* returnCode);

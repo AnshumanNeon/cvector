@@ -256,7 +256,7 @@ Vector4 ProjectionVector4(Vector4 v1, Vector4 v2, int* returnCode) {
 }
 
 /* lerp */
-CVECTOR_VALUE Lerp(CVECTOR_VALUE a, CVECTOR_VALUE b, CVECTOR_VALUE t, int* returnCode) {
+CVECTOR_VALUE CVectorLerp(CVECTOR_VALUE a, CVECTOR_VALUE b, CVECTOR_VALUE t, int* returnCode) {
   CVECTOR_VALUE result = a * (1 - t) + t * b;
   *returnCode = GetErrorCode();
   return result;
