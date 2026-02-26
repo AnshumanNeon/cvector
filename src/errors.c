@@ -11,7 +11,7 @@ int GetErrorCode() {
   }
 
   if(fetestexcept(FE_DIVBYZERO)) {
-    error_code |= CVECTOR_ZERO_DIVISON_ERROR;
+    error_code |= CVECTOR_ZERO_DIVISION_ERROR;
   }
   if(fetestexcept(FE_INEXACT)) {
     error_code |= CVECTOR_INEXACT_VALUE;
