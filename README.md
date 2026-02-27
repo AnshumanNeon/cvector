@@ -12,6 +12,7 @@ The current features include:
 - Linear interpolation
 - Angle between vectors
 - Floating point error detection
+- Comparison (vector equality and magnitude comparison)
 
 ## Installation
 
@@ -44,10 +45,18 @@ The following are the error flags that can be raised:
 
 The library by default uses `long double` to store vector components and return values. But due to platform and hardware specific implementations of it, it is rather variable as to the exact precision it provides. For example: The Microsoft Visual C++ for x86, `long double` is made synonymous to `double` while the GNU C Compiler implements `long double` as an 80-bit extended precision on x86 processors irrespective of the actual physical storage used for the type (which can be either 96 or 128 bits).
 
-The library also provides the flexibility to change the precision to `float` or `double` if it is required. This is done by defining macros. It is reccomended that the macros are defined globally (preferably at compile time) and not locally (example- in the source files themselves) as that might lead to ABI inconsistency (different files might get compiled with different precisions and that can lead to precision loss or even conversion errors).
+The library also provides the flexibility to change the precision to `float` or `double` if it is required. This is done by defining macros. It is reccomended that the macros are defined globally (preferably in compiler flags) and not locally (example- in the source files themselves) as that might lead to ABI inconsistency (different files might get compiled with different precisions and that can lead to precision loss or even conversion errors).
 
 To use `float` as your preferred precision, define the `CVECTOR_USE_FLOAT` macro at compile time (like ` ... -DCVECTOR_USE_FLOAT ...`)
 
 To use `double` as your preferred precision, define the `CVECTOR_USE_DOUBLE` macro at compile time (like ` ... -DCVECTOR_USE_DOUBLE ...`)
+
+### Comparison
+
+In the equality functions, the function returns 0 if false or the values are not equal, or it returns 1 if true or the values are equal.
+
+In the comparison functions, the function returns 0 if the values are equal, 1 if the first argument is bigger than the second, -1 if the first argument is smaller than the second.
+
+Due to such a volatile state of floating-point precision, the library uses epsilon equality in it's comparison utility functions. The value of epsilon is defined based on the precision the user chooses (different epsilon for `float`, `double` and `long double`). The user may wish to alltogether refuse to use epsilon comparison which can be done by defining the `CVECTOR_DISABLE_EPSILON` macro. Once again it is reccomended that this macro is defined at a global level, preferably in the compiler flags.
 
 ### By Anshuman
