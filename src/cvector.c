@@ -275,34 +275,28 @@ Vector4 LerpVector4(Vector4 v1, Vector4 v2, CVECTOR_VALUE x, int* returnCode) {
 
 /* comparison */
 /* equality */
-int Vector2Equal(Vector2 v1, Vector2 v2, int* returnCode) {
+int Vector2Equal(Vector2 v1, Vector2 v2) {
   CVECTOR_VALUE x = CVECTOR_ABS(v1.x - v2.x);
   CVECTOR_VALUE y = CVECTOR_ABS(v1.y - v2.y);
-
-  *returnCode = GetErrorCode();
 
   if(CVECTOR_EPSILON_COMP(x) & CVECTOR_EPSILON_COMP(y)) return 1;
   return 0;
 }
 
-int Vector3Equal(Vector3 v1, Vector3 v2, int* returnCode) {
+int Vector3Equal(Vector3 v1, Vector3 v2) {
   CVECTOR_VALUE x = CVECTOR_ABS(v1.x - v2.x);
   CVECTOR_VALUE y = CVECTOR_ABS(v1.y - v2.y);
   CVECTOR_VALUE z = CVECTOR_ABS(v1.z - v2.z);
-
-  *returnCode = GetErrorCode();
 
   if(CVECTOR_EPSILON_COMP(x) & CVECTOR_EPSILON_COMP(y) & CVECTOR_EPSILON_COMP(z)) return 1;
   return 0;
 }
 
-int Vector4Equal(Vector4 v1, Vector4 v2, int* returnCode) {
+int Vector4Equal(Vector4 v1, Vector4 v2) {
   CVECTOR_VALUE x = CVECTOR_ABS(v1.x - v2.x);
   CVECTOR_VALUE y = CVECTOR_ABS(v1.y - v2.y);
   CVECTOR_VALUE z = CVECTOR_ABS(v1.z - v2.z);
   CVECTOR_VALUE w = CVECTOR_ABS(v1.w - v2.w);
-
-  *returnCode = GetErrorCode();
 
   if(CVECTOR_EPSILON_COMP(x) & CVECTOR_EPSILON_COMP(y) & CVECTOR_EPSILON_COMP(z) & CVECTOR_EPSILON_COMP(w)) return 1;
   return 0;
@@ -310,12 +304,10 @@ int Vector4Equal(Vector4 v1, Vector4 v2, int* returnCode) {
 
 /* magnitude comparison */
 /* returns 0 if equal, -1 if mag1 < mag2 and 1 if mag1 > mag2 */
-int MagComparison(CVECTOR_VALUE mag1, CVECTOR_VALUE mag2, int* returnCode) {
+int MagComparison(CVECTOR_VALUE mag1, CVECTOR_VALUE mag2) {
   CVECTOR_VALUE delta = mag1 - mag2;
   CVECTOR_VALUE delta_abs = CVECTOR_ABS(delta);
 
-  *returnCode = GetErrorCode();
-  
   if(CVECTOR_EPSILON_COMP(delta_abs)) return 0;
   else {
     if(delta < 0) return -1;

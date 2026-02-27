@@ -84,13 +84,13 @@ Vector4 LerpVector4(Vector4 v1, Vector4 v2, CVECTOR_VALUE x, int* returnCode);
 
 /* comparison */
 /* equality */
-int Vector2Equal(Vector2 v1, Vector2 v2, int* returnCode);
-int Vector3Equal(Vector3 v1, Vector3 v2, int* returnCode);
-int Vector4Equal(Vector4 v1, Vector4 v2, int* returnCode);
+int Vector2Equal(Vector2 v1, Vector2 v2);
+int Vector3Equal(Vector3 v1, Vector3 v2);
+int Vector4Equal(Vector4 v1, Vector4 v2);
 
 /* magnitude comparison */
 /* returns 0 if equal, -1 if mag1 < mag2 and 1 if mag1 > mag2 */
-int MagComparison(CVECTOR_VALUE mag1, CVECTOR_VALUE mag2, int* returnCode);
+int MagComparison(CVECTOR_VALUE mag1, CVECTOR_VALUE mag2);
 
 #define CVECTOR_MAIN_H
 #endif
