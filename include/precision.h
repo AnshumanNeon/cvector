@@ -22,5 +22,13 @@
 #define CVECTOR_EPSILON LDBL_EPSILON
 #endif
 
+#if defined(CVECTOR_DISABLE_EPSILON)
+#undef CVECTOR_EPSILON
+#define CVECTOR_EPSILON 0
+#define CVECTOR_EPSILON_COMP(diff) (diff = CVECTOR_EPSILON)
+#else
+#define CVECTOR_EPSILON_COMP(diff) (diff <= CVECTOR_EPSILON)
+#endif
+
 #define CVECTOR_PRECISION_H
 #endif
