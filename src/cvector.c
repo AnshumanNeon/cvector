@@ -272,3 +272,45 @@ Vector3 LerpVector3(Vector3 v1, Vector3 v2, CVECTOR_VALUE x, int* returnCode) {
 Vector4 LerpVector4(Vector4 v1, Vector4 v2, CVECTOR_VALUE x, int* returnCode) {
   return GetVector4(CVectorLerp(v1.x, v2.x, x, returnCode), CVectorLerp(v1.y, v2.y, x, returnCode), CVectorLerp(v1.z, v2.z, x, returnCode), CVectorLerp(v1.w, v2.w, x, returnCode));
 }
+
+/* comparison */
+/* equality */
+int Vector2Equal(Vector2 v1, Vector2 v2) {
+  CVECTOR_VALUE x = CVECTOR_ABS(v1.x - v2.x);
+  CVECTOR_VALUE y = CVECTOR_ABS(v1.y - v2.y);
+
+  if((x <= CVECTOR_EPSILON) & (y <= CVECTOR_EPSILON)) return 1;
+  return 0;
+}
+
+int Vector3Equal(Vector3 v1, Vector3 v2) {
+  CVECTOR_VALUE x = CVECTOR_ABS(v1.x - v2.x);
+  CVECTOR_VALUE y = CVECTOR_ABS(v1.y - v2.y);
+  CVECTOR_VALUE z = CVECTOR_ABS(v1.z - v2.z);
+
+  if((x <= CVECTOR_EPSILON) & (y <= CVECTOR_EPSILON) & (z <= CVECTOR_EPSILON)) return 1;
+  return 0;
+}
+
+int Vector4Equal(Vector4 v1, Vector4 v2) {
+  CVECTOR_VALUE x = CVECTOR_ABS(v1.x - v2.x);
+  CVECTOR_VALUE y = CVECTOR_ABS(v1.y - v2.y);
+  CVECTOR_VALUE z = CVECTOR_ABS(v1.z - v2.z);
+  CVECTOR_VALUE w = CVECTOR_ABS(v1.w - v2.w);
+
+  if((x <= CVECTOR_EPSILON) & (y <= CVECTOR_EPSILON) & (z <= CVECTOR_EPSILON) & (w <= CVECTOR_EPSILON)) return 1;
+  return 0;
+}
+
+/* magnitude comparison */
+/* returns 0 if equal, -1 if mag1 < mag2 and 1 if mag1 > mag2 */
+int MagComparison(CVECTOR_VALUE mag1, CVECTOR_VALUE mag2) {
+  CVECTOR_VALUE delta = mag1 - mag2;
+  CVECTOR_VALUE delta_abs = CVECTOR_ABS(delta);
+
+  if(delta_abs <= CVECTOR_EPSILON) return 0;
+  else {
+    if(delta < 0) return -1;
+    else return 1;
+  }
+}
